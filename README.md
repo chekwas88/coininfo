@@ -1,0 +1,1 @@
+###  A page that shoes coin information in a responsive table display.

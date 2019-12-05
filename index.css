@@ -1,0 +1,173 @@
+/* Some starer styling. Feel free to change anything you like */
+
+body {
+    background-color: rgb(220,220,220);
+    font-size: 15px;
+    line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  }
+main {
+    width: 60%; 
+    margin: 10% auto;
+
+}
+.hidden {
+    display: none;
+}
+
+.scroll {
+    box-shadow: 0 0 4px rgba(86, 86, 87, 0.829);
+}
+
+
+table { 
+    width: 100%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+}
+.data-nav {
+    width: 100%;
+    /* display: flex;
+    justify-content: space-between; */
+    background: #eee;
+    border: none;
+    padding: 6px;
+    box-sizing: border-box;
+}
+.data-nav button {
+    border: 0;
+    background: inherit;
+    font-weight: bold;
+    padding: 5px;
+}
+.data-nav .next {
+    float: right;
+    overflow: auto;
+}
+.data-nav .previous {
+    float: left;
+    overflow: auto;
+}
+.data-nav::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+.data-nav button span {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+
+
+i {
+    border: 2px solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+thead {
+    border-radius: 5px;
+}
+thead tr { 
+    background: #fff;
+    font-weight: bolder; 
+}
+tbody tr {
+    background: #fff;
+    font-weight: 550;
+}
+tbody tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+
+td, th { 
+  padding: 6px;  
+  text-align: left; 
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+		
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .scroll {
+        background-color: #F5F5F5;
+        overflow-y: scroll;
+        height: 100vh;
+        padding-left: 5px;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(151, 146, 146);
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    #scroll-style::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    }
+    #scroll-style::-webkit-scrollbar-thumb {
+        background-color: rgb(151, 146, 146);
+        border-radius: 5px;
+    }
+    #scroll-style::-webkit-scrollbar-track{
+        box-shadow: inset 0 0 6 rgba(0,0,0,0.3);
+        -webkit-box-shadow: inset 0 0 6 rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
+    main {
+        width: 100%;
+        padding-bottom: 20px;
+        padding-right: 10px;
+    }
+    table {
+        width: 100%;
+        box-shadow: 0 0 4px rgba(86, 86, 87, 0.829);
+        margin: 20px auto 0;
+    }
+    .data-nav {
+        width: 100%;
+        box-shadow: 0 0 4px rgba(86, 86, 87, 0.829);
+        margin: 0 auto 0;
+    }
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+        
+        display: flex;
+        flex-wrap: wrap;
+    }
+	
+	td { 
+		border: none;
+        flex-basis: 50%;
+        box-sizing: border-box;
+	}
+	
+	td:before { 
+		/* Now like a table header */
+        display: flex;
+        
+		/* Top/left values mimic padding */ 
+		white-space: nowrap;
+    }
+    td:nth-of-type(1):before { content: "💰 Coin"; }
+	td:nth-of-type(2):before { content: "📄 Code"; }
+	td:nth-of-type(3):before { content: "🤑 Price"; }
+	td:nth-of-type(4):before { content: "📉 Total Supply"; }
+}
